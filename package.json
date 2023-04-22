@@ -1,0 +1,17 @@
+{
+  "name": "lost-in-the-woods",
+  "version": "1.0.0",
+  "description": "A simple text-based game built using AngularJS and MaterializeCSS",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "dependencies": {
+    "angular": "^1.8.2"
+  },
+  "devDependencies": {
+    "http-server": "^13.0.1"
+  },
+  "author": "Mostly ChatGPT. ",
+  "license": "MIT"
+}

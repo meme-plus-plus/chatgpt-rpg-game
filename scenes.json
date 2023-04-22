@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "message": "Welcome to the Text RPG!",
+      "choices": [
+        { "text": "Option 1", "nextSceneId": 2 },
+        { "text": "Option 2", "nextSceneId": 3 },
+        { "text": "Watch a video", "nextSceneId": 4 }
+      ]
+    },
+    {
+      "id": 2,
+      "message": "You chose Option 1.",
+      "choices": [
+        { "text": "Go back", "nextSceneId": 1 }
+      ]
+    },
+    {
+      "id": 3,
+      "message": "You chose Option 2.",
+      "choices": [
+        { "text": "Go back", "nextSceneId": 1 }
+      ]
+    },
+    {
+        "id": 4,
+        "message": "",
+        "videoId": "synJZAtH58E",
+        "choices": [
+          { "text": "Go back", "nextSceneId": 1 }
+        ]
+      }
+  ]
+  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="textRPG">
+<head>
+  <title>Text RPG</title>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/services/sceneService.js"></script>
+
+  <!-- MaterializeCSS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- MaterializeCSS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body ng-controller="GameController">
+  <div class="container">
+    <div class="card-panel hoverable">
+      <p>{{ currentScene.message }}</p>
+      <div class="row" style="text-align:center" ng-show="!isLoadingView && !videoUrl">
+        <button class="btn" ng-repeat="choice in currentScene.choices" ng-click="chooseOption(choice)" >
+			{{ choice.text }}
+		  </button>		  
+      </div>
+	  <div ng-show="isLoadingVideo" class="video-loading-spinner">
+		Loading video...
+	  </div>
+	  
+      <div class="video-container" ng-show="videoUrl &&!isLoadingVideo">
+        <iframe width="560" height="315" ng-src="{{ videoUrl }}"></iframe>
+      </div>
+
+	  <div class="row" style="text-align:center; margin-top:30px" ng-show="videoUrl">
+        <button class="btn" ng-repeat="choice in currentScene.choices" ng-click="chooseOption(choice)" >
+			{{ choice.text }}
+		  </button>		  
+      </div>
+    </div>
+  </div>
+
+  <audio id="background-music" loop>
+	<source src="assets/audio/spooky-music.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+  </audio>
+  
+</body>
+</html>
